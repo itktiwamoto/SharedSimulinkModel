@@ -1,0 +1,26 @@
+name: Submodule Update Integration
+
+on:
+  #push:
+  #  branches:
+  #    - main   # Trigger when changes are pushed to SubmoduleX/main
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+  
+env:
+  GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+
+jobs:
+  update-models:
+    runs-on: self-hosted  # Self-hosted runner with MATLAB R2019b
+
+    steps:
+    - name: Checkout SharedSimulinkModel
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - name: Set up MATLAB (assumes pre-installed)
+      run: echo "MATLAB assumed installed in PATH"
+
+    - name: Run Update Script
+      run: matlab -batch "GIT_AUTOMATION_Submodule_Update"

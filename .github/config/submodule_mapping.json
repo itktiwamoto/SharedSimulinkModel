@@ -1,0 +1,16 @@
+[
+  {
+    "project": "ProjectA",
+    "mapping": [
+      { "model": "GIT_Shared_Model_Example", "sha": "latest" },
+      { "model": "GIT_Shared_Model_Example_2", "sha": "0bf2026" }
+    ]
+  },
+  {
+    "project": "ProjectB",
+    "mapping": [
+      { "model": "GIT_Shared_Model_Example", "sha": "0bf2026" },
+      { "model": "GIT_Shared_Model_Example_2", "sha": "latest" }
+    ]
+  }
+]
